@@ -1,4 +1,5 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Pressable } from 'react-native';
+import { useRouter } from 'expo-router';
 import { useUser } from '@/hooks/use-user';
 import { GameColors } from '@/constants/theme';
 import { getLevelInfo } from '@/constants/game';
@@ -6,6 +7,7 @@ import { getLevelInfo } from '@/constants/game';
 export default function ProfileScreen() {
   const { level, xp, levelTitle, levelEmoji, streakDays, stats } = useUser();
   const info = getLevelInfo(xp);
+  const router = useRouter();
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
@@ -32,6 +34,14 @@ export default function ProfileScreen() {
         ) : (
           <Text style={styles.empty}>还没有获得成就，开始学习吧！</Text>
         )}
+      </View>
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>📊 学习工具</Text>
+        <Pressable style={styles.actionItem} onPress={() => router.push('/wrong-answers')}>
+          <Text style={styles.actionIcon}>📝</Text>
+          <Text style={styles.actionText}>错题本</Text>
+          <Text style={styles.actionArrow}>→</Text>
+        </Pressable>
       </View>
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>⚙️ 设置</Text>
@@ -68,5 +78,9 @@ const styles = StyleSheet.create({
   achievement: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingVertical: 4 },
   achName: { fontSize: 14, color: '#374151' },
   empty: { fontSize: 14, color: '#9CA3AF' },
+  actionItem: { flexDirection: 'row', alignItems: 'center', padding: 14, backgroundColor: '#EFF6FF', borderRadius: 10, marginTop: 8 },
+  actionIcon: { fontSize: 20, marginRight: 12 },
+  actionText: { flex: 1, fontSize: 15, fontWeight: '600', color: GameColors.primary },
+  actionArrow: { fontSize: 16, color: GameColors.primary },
   settingItem: { fontSize: 14, color: '#6B7280', paddingVertical: 8 },
 });

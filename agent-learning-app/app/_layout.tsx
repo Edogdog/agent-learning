@@ -34,6 +34,7 @@ function RootNavigator() {
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="chapter/[id]" options={{ headerShown: true, title: '章节学习', headerBackTitle: '返回' }} />
         <Stack.Screen name="quiz/[stageId]" options={{ headerShown: true, title: '知识测验', headerBackTitle: '返回' }} />
+        <Stack.Screen name="wrong-answers" options={{ headerShown: true, title: '错题本', headerBackTitle: '返回' }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'AI 导师' }} />
       </Stack>
       <TutorFAB />

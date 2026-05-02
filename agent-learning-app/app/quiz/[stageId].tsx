@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Pressable, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, Pressable, ActivityIndicator, ScrollView } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { api, QuizData, QuizResult } from '@/services/api';
 import { useUser } from '@/hooks/use-user';
@@ -48,20 +48,29 @@ export default function QuizScreen() {
 
   if (result) {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container} contentContainerStyle={styles.resultContent}>
         <Text style={styles.resultEmoji}>{result.is_perfect ? '🎉' : result.score >= 60 ? '👍' : '💪'}</Text>
         <Text style={styles.resultTitle}>测验完成！</Text>
-        <Text style={styles.resultScore}>正确率 {result.score}%</Text>
+        <View style={styles.scoreCircle}>
+          <Text style={styles.scoreNum}>{result.score}%</Text>
+        </View>
         <Text style={styles.resultDetail}>{result.correct_count}/{result.total_questions} 题正确</Text>
         <Text style={styles.xpText}>+{result.xp_awarded} XP</Text>
         {result.new_level_up && <Text style={styles.levelUp}>⬆️ 升级到 Lv.{result.new_level}！</Text>}
         {result.unlocked_achievements.map((a, i) => (
           <Text key={i} style={styles.achievement}>{a.emoji} 获得成就: {a.name}</Text>
         ))}
+        <Text style={styles.feedbackTitle}>📋 详细解析</Text>
+        {result.feedback.map((fb, i) => (
+          <View key={i} style={[styles.feedbackCard, fb.is_correct ? styles.fbCorrect : styles.fbWrong]}>
+            <Text style={styles.fbStatus}>{fb.is_correct ? '✅' : '❌'} 第{i+1}题</Text>
+            {!fb.is_correct && <Text style={styles.fbExplanation}>{fb.explanation}</Text>}
+          </View>
+        ))}
         <Pressable style={styles.backBtn} onPress={() => router.back()}>
           <Text style={styles.backBtnText}>返回章节</Text>
         </Pressable>
-      </View>
+      </ScrollView>
     );
   }
 
@@ -121,12 +130,20 @@ const styles = StyleSheet.create({
   nextBtnDisabled: { opacity: 0.5 },
   nextBtnText: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
   resultEmoji: { fontSize: 64, textAlign: 'center', marginTop: 60 },
+  resultContent: { padding: 20, paddingBottom: 40 },
   resultTitle: { fontSize: 24, fontWeight: 'bold', textAlign: 'center', marginTop: 12 },
-  resultScore: { fontSize: 36, fontWeight: 'bold', color: GameColors.primary, textAlign: 'center', marginTop: 8 },
-  resultDetail: { fontSize: 16, color: '#6B7280', textAlign: 'center', marginTop: 4 },
+  scoreCircle: { width: 100, height: 100, borderRadius: 50, backgroundColor: GameColors.primary, alignSelf: 'center', marginTop: 16, justifyContent: 'center', alignItems: 'center' },
+  scoreNum: { fontSize: 32, fontWeight: 'bold', color: '#fff' },
+  resultDetail: { fontSize: 16, color: '#6B7280', textAlign: 'center', marginTop: 8 },
   xpText: { fontSize: 18, color: GameColors.xpBar, textAlign: 'center', marginTop: 12, fontWeight: '600' },
   levelUp: { fontSize: 16, color: GameColors.accent, textAlign: 'center', marginTop: 8 },
   achievement: { fontSize: 14, color: GameColors.success, textAlign: 'center', marginTop: 4 },
-  backBtn: { backgroundColor: GameColors.primary, padding: 16, borderRadius: 12, alignItems: 'center', marginTop: 30, marginHorizontal: 20 },
+  feedbackTitle: { fontSize: 18, fontWeight: 'bold', marginTop: 24, marginBottom: 12, color: '#111827' },
+  feedbackCard: { padding: 14, borderRadius: 10, marginBottom: 8 },
+  fbCorrect: { backgroundColor: '#ECFDF5' },
+  fbWrong: { backgroundColor: '#FEF2F2' },
+  fbStatus: { fontSize: 14, fontWeight: '600', color: '#374151' },
+  fbExplanation: { fontSize: 13, color: '#6B7280', marginTop: 6, lineHeight: 19 },
+  backBtn: { backgroundColor: GameColors.primary, padding: 16, borderRadius: 12, alignItems: 'center', marginTop: 24 },
   backBtnText: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
 });

@@ -166,6 +166,12 @@ export const api = {
   askTutor: (question: string, userId: number, context?: Record<string, unknown>) =>
     request<{ answer: string }>('POST', '/tutor/ask', { question, user_id: userId, context }),
 
+  getQuizHistory: (userId: number) =>
+    request<Array<{ id: number; quiz_id: string; chapter_id: number; score: number; is_perfect: boolean; created_at: string }>>('GET', `/quiz/history/${userId}`),
+
+  getWrongAnswers: (userId: number) =>
+    request<Array<{ id: number; question: string; correct_index: number; explanation: string; created_at: string }>>('GET', `/quiz/wrong-answers/${userId}`),
+
   health: () => request<{ status: string; version: string }>('GET', '/health'),
 };
 
