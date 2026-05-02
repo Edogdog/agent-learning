@@ -1,0 +1,10 @@
+[
+  {"id": "ivq-1", "category": "概念理解", "question": "什么是Agent（智能体）？请用你自己的话解释。", "reference": "Agent是能感知环境并采取行动以达成目标的自主实体，核心要素包括感知、推理、记忆和行动。"},
+  {"id": "ivq-2", "category": "对比分析", "question": "ReAct和Plan-and-Solve范式有什么区别？分别适用于什么场景？", "reference": "ReAct边想边做适合探索性任务，Plan-and-Solve先计划再执行适合结构化任务。"},
+  {"id": "ivq-3", "category": "实践应用", "question": "如何设计一个多Agent系统？需要考虑哪些因素？", "reference": "需要考虑Agent角色分工、通信协议、协调机制、错误处理、状态共享等。"},
+  {"id": "ivq-4", "category": "概念理解", "question": "解释PEAS模型的四个要素，并给出一个自动驾驶的例子。", "reference": "P=安全快速到达，E=道路环境，A=方向盘/油门/刹车，S=摄像头/雷达/GPS。"},
+  {"id": "ivq-5", "category": "源码实现", "question": "如何实现一个ReAct循环？关键步骤是什么？", "reference": "Thought→Action→Observation循环，需要解析LLM输出、执行工具、将结果返回到对话。"},
+  {"id": "ivq-6", "category": "场景设计", "question": "设计一个智能客服系统，你会如何选择Agent架构？", "reference": "考虑意图识别、知识库检索、多轮对话、人工转接等组件，可采用混合式架构。"},
+  {"id": "ivq-7", "category": "对比分析", "question": "低代码Agent平台和全代码框架各有什么优劣？", "reference": "低代码快速原型但灵活性有限，全代码深度定制但开发成本高。"},
+  {"id": "ivq-8", "category": "概念理解", "question": "什么是RAG？它在Agent系统中扮演什么角色？", "reference": "检索增强生成，结合外部知识检索来增强LLM回答的准确性和时效性。"}
+]
