@@ -1,4 +1,4 @@
 [
-  {"id": "q5-1-1", "quiz_id": "quiz-5-1", "stage_id": "5-1", "type": "multiple_choice", "question": "以下哪个不是低代码Agent平台的优势？", "options": ["快速原型开发", "可视化工作流设计", "极致性能优化", "降低开发门槛"], "correct_index": 2, "explanation": "低代码平台主要优势是快速开发、可视化和降低门槛，性能优化通常不是其强项。", "xp_reward": 20, "difficulty": "easy"},
-  {"id": "q5-1-2", "quiz_id": "quiz-5-1", "stage_id": "5-1", "type": "multiple_choice", "question": "字节跳动出品的低代码Agent平台叫什么？", "options": ["Dify", "Coze（扣子）", "n8n", "LangChain"], "correct_index": 1, "explanation": "Coze（扣子）是字节跳动出品的低代码Agent构建平台，中文生态完善。", "xp_reward": 20, "difficulty": "easy"}
+{"id": "q5-1-1", "quiz_id": "quiz-5-1", "stage_id": "5-1", "type": "multiple_choice", "question": "以下哪个不是低代码Agent平台的优势？", "options": ["快速原型开发", "可视化工作流设计", "极致性能优化", "降低开发门槛"], "correct_index": 2, "explanation": "低代码平台主要优势是快速开发、可视化和降低门槛，性能优化通常不是其强项。", "xp_reward": 20, "difficulty": "easy"},
+{"id": "q5-1-2", "quiz_id": "quiz-5-1", "stage_id": "5-1", "type": "multiple_choice", "question": "字节跳动出品的低代码Agent平台叫什么？", "options": ["Dify", "Coze（扣子）", "n8n", "LangChain"], "correct_index": 1, "explanation": "Coze（扣子）是字节跳动出品的低代码Agent构建平台，中文生态完善。", "xp_reward": 20, "difficulty": "easy"}
 ]

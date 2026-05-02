@@ -172,6 +172,15 @@ export const api = {
   getWrongAnswers: (userId: number) =>
     request<Array<{ id: number; question: string; correct_index: number; explanation: string; created_at: string }>>('GET', `/quiz/wrong-answers/${userId}`),
 
+  runCode: (code: string, stdin?: string) =>
+    request<{ success: boolean; stdout: string; stderr: string; returncode: number }>('POST', '/code-lab/run', { code, stdin }),
+
+  aiTeach: (data: { user_id: number; chapter_id: number; stage_id: string; node_id: string; user_message: string }) =>
+    request<{ type: string; content: string; options?: string[]; correct_index?: number; explanation?: string; code_template?: string; xp_reward?: number }>('POST', '/ai-teach/teach', data),
+
+  aiGenerateQuiz: (data: { user_id: number; chapter_id: number; node_id: string; difficulty: string }) =>
+    request<{ type: string; content: string; options: string[]; correct_index: number; explanation: string; xp_reward: number }>('POST', '/ai-teach/quiz/generate', data),
+
   health: () => request<{ status: string; version: string }>('GET', '/health'),
 };
 
