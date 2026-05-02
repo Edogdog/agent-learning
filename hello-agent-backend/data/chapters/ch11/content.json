@@ -1,0 +1,1 @@
+{"id": 11, "title": "Agentic强化学习", "description": "探索RLHF、GRPO等训练方法，理解如何让Agent通过反馈不断进化和改进。", "estimated_hours": 3.5, "emoji": "🎯", "prerequisites": [3, 4], "story": "训练你的Agent进化"}

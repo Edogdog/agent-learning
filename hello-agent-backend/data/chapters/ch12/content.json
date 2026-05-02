@@ -1,0 +1,1 @@
+{"id": 12, "title": "Agent性能评估", "description": "建立Agent评估体系和竞技场，学习如何量化评估Agent的推理、工具使用和任务完成能力。", "estimated_hours": 2.0, "emoji": "📊", "prerequisites": [7], "story": "建立竞技场，一决高下"}

@@ -1,0 +1,1 @@
+{"id": 10, "title": "Agent通信协议", "description": "了解MCP、A2A、ANP等Agent通信协议，掌握多Agent系统的标准化集成方式。", "estimated_hours": 2.0, "emoji": "📡", "prerequisites": [6], "story": "掌握Agent之间的密语"}

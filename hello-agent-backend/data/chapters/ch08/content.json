@@ -1,0 +1,1 @@
+{"id": 8, "title": "记忆与检索增强(RAG)", "description": "深入学习RAG技术，构建具备知识检索能力的智能Agent，掌握向量数据库和文档处理。", "estimated_hours": 3.0, "emoji": "🧠", "prerequisites": [4], "story": "赋予机器人记忆之力"}
