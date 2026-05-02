@@ -1,0 +1,101 @@
+[
+  {
+    "id": "first_lesson",
+    "name": "初次见面",
+    "description": "完成第一个知识点",
+    "emoji": "🎓",
+    "rarity": "普通",
+    "condition_type": "complete_first_node",
+    "condition_value": 1
+  },
+  {
+    "id": "chapter1_complete",
+    "name": "入门者",
+    "description": "完成第一章",
+    "emoji": "📚",
+    "rarity": "普通",
+    "condition_type": "complete_chapter",
+    "condition_value": 1
+  },
+  {
+    "id": "chapter2_complete",
+    "name": "历史学家",
+    "description": "完成第二章",
+    "emoji": "📜",
+    "rarity": "普通",
+    "condition_type": "complete_chapter",
+    "condition_value": 2
+  },
+  {
+    "id": "chapter3_complete",
+    "name": "LLM探索者",
+    "description": "完成第三章",
+    "emoji": "🧠",
+    "rarity": "普通",
+    "condition_type": "complete_chapter",
+    "condition_value": 3
+  },
+  {
+    "id": "chapter4_complete",
+    "name": "范式大师",
+    "description": "完成第四章",
+    "emoji": "⚡",
+    "rarity": "普通",
+    "condition_type": "complete_chapter",
+    "condition_value": 4
+  },
+  {
+    "id": "perfect_10",
+    "name": "百发百中",
+    "description": "连续10次测验全对",
+    "emoji": "🎯",
+    "rarity": "稀有",
+    "condition_type": "perfect_quizzes_count",
+    "condition_value": 10
+  },
+  {
+    "id": "quiz_streak_10",
+    "name": "连击大师",
+    "description": "连续10次测验全部正确",
+    "emoji": "🔥",
+    "rarity": "稀有",
+    "condition_type": "quiz_pass_streak",
+    "condition_value": 10
+  },
+  {
+    "id": "streak_3",
+    "name": "三日之约",
+    "description": "连续学习3天",
+    "emoji": "📅",
+    "rarity": "普通",
+    "condition_type": "streak_days",
+    "condition_value": 3
+  },
+  {
+    "id": "streak_7",
+    "name": "周勤奋之星",
+    "description": "连续学习7天",
+    "emoji": "🔥",
+    "rarity": "稀有",
+    "condition_type": "streak_days",
+    "condition_value": 7
+  },
+  {
+    "id": "first_code",
+    "name": "程序员",
+    "description": "首次运行代码成功",
+    "emoji": "💻",
+    "rarity": "普通",
+    "condition_type": "first_code_run",
+    "condition_value": 1
+  },
+  {
+    "id": "night_owl",
+    "name": "夜猫子",
+    "description": "在23:00-02:00之间学习",
+    "emoji": "🌙",
+    "rarity": "普通",
+    "condition_type": "night_owl",
+    "condition_value": 1
+  }
+]

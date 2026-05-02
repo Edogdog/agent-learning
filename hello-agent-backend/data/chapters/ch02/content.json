@@ -1,0 +1,9 @@
+{
+  "id": 2,
+  "title": "智能体发展史",
+  "description": "回顾从图灵测试到现代LLM智能体的演进历程，理解技术发展的脉络和关键突破。",
+  "estimated_hours": 1.5,
+  "emoji": "📜",
+  "prerequisites": [1],
+  "story": "穿越时空，拜访智能体先祖"
+}

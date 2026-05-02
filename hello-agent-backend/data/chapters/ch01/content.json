@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "title": "初识智能体",
+  "description": "了解智能体的基本概念、发展历程和核心要素，为后续学习打下认知基础。",
+  "estimated_hours": 2.0,
+  "emoji": "🤖",
+  "prerequisites": [],
+  "story": "新手机器人的启蒙仪式"
+}

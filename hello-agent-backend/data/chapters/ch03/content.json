@@ -1,0 +1,9 @@
+{
+  "id": 3,
+  "title": "大语言模型基础",
+  "description": "理解Transformer架构、Prompt工程和主流LLM模型，为构建LLM智能体打下坚实基础。",
+  "estimated_hours": 3.0,
+  "emoji": "🧠",
+  "prerequisites": [1],
+  "story": "解读大模型的心脏——Transformer"
+}

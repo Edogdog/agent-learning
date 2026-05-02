@@ -1,0 +1,30 @@
+{
+  "id": "1-4",
+  "chapter_id": 1,
+  "title": "智能体的类型大揭秘",
+  "order": 4,
+  "estimated_minutes": 15,
+  "theme_emoji": "🎭",
+  "nodes": [
+    {
+      "id": "1-4-1",
+      "title": "按决策架构分类",
+      "content_type": "text",
+      "order": 1,
+      "xp_reward": 10,
+      "content": "## 按决策架构分类\n\n### 单Agent架构\n- 一个智能体独立完成所有任务\n- 适合简单的、线性任务\n- 优点：实现简单，调试容易\n\n### 多Agent架构\n- 多个智能体协作完成任务\n- 适合复杂的、需要分工的任务\n- 优点：可扩展、专业化分工\n- 挑战：通信和协调成本\n\n> 👥 就像一个人做事 vs 一个团队做事，各有优劣。"
+    },
+    {
+      "id": "1-4-2",
+      "title": "按反应性和知识表示分类",
+      "content_type": "text",
+      "order": 2,
+      "xp_reward": 10,
+      "content": "## 按其他维度分类\n\n### 按反应性分类\n- **反应式（Reactive）**：即时响应，无长期规划\n- **规划式（Deliberative）**：制定计划后执行\n- **混合式（Hybrid）**：结合两者优势\n\n### 按知识表示分类\n- **符号型（Symbolic）**：使用显式符号和规则\n- **亚符号型（Sub-symbolic）**：使用神经网络等分布式表示\n- **神经符号型（Neuro-Symbolic）**：结合两者的前沿方向\n\n> 🏗️ 现代LLM智能体通常是混合式+神经符号型的结合体。"
+    }
+  ],
+  "quiz": {
+    "quiz_id": "quiz-1-4",
+    "pass_threshold": 0.6
+  }
+}

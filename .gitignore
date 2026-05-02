@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+hello-agent-backend/__pycache__/
+hello-agent-backend/**/__pycache__/
+*.pyc
+
+# Environment
+.env
+*.env.local
+
+# Database
+*.db
+hello-agent-backend/data/hello_agent.db
+
+# IDE
+.vscode/
+.idea/
+
+# Expo
+.expo/
+dist/
+web-build/
+agent-learning-app/.expo/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+hello-agent-backend/tests/test.db
+.pytest_cache/

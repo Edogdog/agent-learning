@@ -1,0 +1,9 @@
+{
+  "id": 4,
+  "title": "智能体经典范式构建",
+  "description": "深入学习ReAct、Plan-and-Solve、Reflection三大经典Agent范式，掌握LLM智能体的核心设计模式。",
+  "estimated_hours": 3.5,
+  "emoji": "⚡",
+  "prerequisites": [3],
+  "story": "修炼三大秘技：ReAct / Plan / Reflect"
+}

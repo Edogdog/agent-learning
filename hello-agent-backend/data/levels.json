@@ -1,0 +1,14 @@
+[
+  {"level": 1, "title": "新手小白", "xp_required": 0, "emoji": "🌱"},
+  {"level": 2, "title": "代码学徒", "xp_required": 200, "emoji": "🌿"},
+  {"level": 3, "title": "Agent萌新", "xp_required": 500, "emoji": "🍀"},
+  {"level": 4, "title": "调参侠", "xp_required": 900, "emoji": "🌲"},
+  {"level": 5, "title": "Prompt法师", "xp_required": 1500, "emoji": "🌳"},
+  {"level": 6, "title": "工具匠人", "xp_required": 2300, "emoji": "🛠️"},
+  {"level": 7, "title": "ReAct达人", "xp_required": 3400, "emoji": "⚡"},
+  {"level": 8, "title": "架构师", "xp_required": 5000, "emoji": "🏗️"},
+  {"level": 9, "title": "Multi-Agent", "xp_required": 7200, "emoji": "👥"},
+  {"level": 10, "title": "Agent大师", "xp_required": 10000, "emoji": "🏆"},
+  {"level": 11, "title": "传奇构建者", "xp_required": 15000, "emoji": "👑"},
+  {"level": 12, "title": "Agent之神", "xp_required": 25000, "emoji": "🌟"}
+]

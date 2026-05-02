@@ -1,0 +1,30 @@
+{
+  "id": "1-5",
+  "chapter_id": 1,
+  "title": "智能体的运行原理",
+  "order": 5,
+  "estimated_minutes": 15,
+  "theme_emoji": "⚙️",
+  "nodes": [
+    {
+      "id": "1-5-1",
+      "title": "PEAS模型",
+      "content_type": "text",
+      "order": 1,
+      "xp_reward": 10,
+      "content": "## PEAS模型\n\nPEAS是描述智能体任务环境的框架：\n\n- **P (Performance)**：性能度量 —— 如何评价智能体做得好不好？\n- **E (Environment)**：环境 —— 智能体所处的世界是什么样？\n- **A (Actuators)**：执行器 —— 智能体可以做什么动作？\n- **S (Sensors)**：传感器 —— 智能体能感知到什么信息？\n\n### 示例：自动驾驶的PEAS\n- P：安全、快速、舒适、守法地到达目的地\n- E：道路、其他车辆、行人、交通标志\n- A：方向盘、油门、刹车、转向灯\n- S：摄像头、激光雷达、GPS、速度传感器\n\n> 🎯 PEAS是设计任何智能体系统之前必须回答的四个问题。"
+    },
+    {
+      "id": "1-5-2",
+      "title": "Agent Loop与TAO范式",
+      "content_type": "text",
+      "order": 2,
+      "xp_reward": 10,
+      "content": "## Agent Loop（智能体循环）\n\n智能体的核心工作流程是一个循环：\n\n```\n感知(Perceive) → 思考(Think) → 行动(Act) → 感知(Perceive) → ...\n```\n\n## Thought-Action-Observation (TAO) 范式\n\n这是LLM智能体的标准工作模式：\n\n1. **Thought（思考）**：\"我需要查询今天的天气\"\n2. **Action（行动）**：调用天气查询工具\n3. **Observation（观察）**：\"北京今天晴天，26°C\"\n4. **Thought（再思考）**：\"晴天适合户外，我来推荐几个公园\"\n5. **Action（再行动）**：调用景点推荐工具\n\n> 🔄 TAO循环让LLM能够进行多步推理和工具调用。"
+    }
+  ],
+  "quiz": {
+    "quiz_id": "quiz-1-5",
+    "pass_threshold": 0.6
+  }
+}
