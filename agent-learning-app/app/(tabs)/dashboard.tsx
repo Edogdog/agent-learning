@@ -2,12 +2,14 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { useUser } from '@/hooks/use-user';
 import { useProgress } from '@/hooks/use-progress';
 import { GameColors } from '@/constants/theme';
-import { getLevelInfo } from '@/constants/game';
+import { getLevelInfo, ACHIEVEMENTS } from '@/constants/game';
 
 export default function DashboardScreen() {
   const { id, level, xp, levelTitle, levelEmoji, streakDays, stats, refreshStats } = useUser();
   const { chapters } = useProgress(id || null);
   const info = getLevelInfo(xp);
+  const weekDays = ['日', '一', '二', '三', '四', '五', '六'];
+  const today = new Date().getDay();
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
@@ -29,8 +31,31 @@ export default function DashboardScreen() {
       </View>
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>📅 连续打卡 {streakDays} 天</Text>
-        <Text style={styles.sectionSubtext}>{streakDays >= 7 ? '🔥 太棒了，保持下去！' : '每天进步一点点 💪'}</Text>
+        <View style={styles.streakRow}>
+          {weekDays.map((d, i) => (
+            <View key={i} style={[styles.dayDot, i <= today && i >= today - streakDays + 1 ? styles.dayActive : styles.dayInactive]}>
+              <Text style={[styles.dayText, i <= today && i >= today - streakDays + 1 && styles.dayTextActive]}>{d}</Text>
+            </View>
+          ))}
+        </View>
+        <Text style={styles.sectionSubtext}>{streakDays >= 7 ? '🔥 太棒了，保持下去！' : streakDays >= 3 ? '🌟 势头正旺！' : '每天进步一点点 💪'}</Text>
       </View>
+      {stats?.achievements && stats.achievements.length > 0 && (
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>🏆 已获成就 ({stats.achievements.length})</Text>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.achScroll}>
+            {stats.achievements.map((a, i) => {
+              const def = ACHIEVEMENTS[a.id];
+              return (
+                <View key={i} style={styles.achCard}>
+                  <Text style={styles.achEmoji}>{def?.emoji || '🏅'}</Text>
+                  <Text style={styles.achName}>{def?.name || a.id}</Text>
+                </View>
+              );
+            })}
+          </ScrollView>
+        </View>
+      )}
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>📖 学习进度</Text>
         {chapters.slice(0, 4).map(ch => (
@@ -84,4 +109,14 @@ const styles = StyleSheet.create({
   chapterBar: { height: 4, backgroundColor: '#E5E7EB', borderRadius: 2 },
   chapterFill: { height: 4, backgroundColor: GameColors.success, borderRadius: 2 },
   chapterPercent: { fontSize: 12, color: '#9CA3AF', marginLeft: 8 },
+  streakRow: { flexDirection: 'row', justifyContent: 'space-around', marginTop: 12, marginBottom: 8 },
+  dayDot: { width: 32, height: 32, borderRadius: 16, justifyContent: 'center', alignItems: 'center' },
+  dayActive: { backgroundColor: GameColors.success },
+  dayInactive: { backgroundColor: '#E5E7EB' },
+  dayText: { fontSize: 11 },
+  dayTextActive: { color: '#fff', fontWeight: 'bold' },
+  achScroll: { marginTop: 10 },
+  achCard: { alignItems: 'center', marginRight: 16, backgroundColor: '#F0FDF4', paddingHorizontal: 14, paddingVertical: 10, borderRadius: 12 },
+  achEmoji: { fontSize: 28 },
+  achName: { fontSize: 11, color: '#374151', marginTop: 4 },
 });
