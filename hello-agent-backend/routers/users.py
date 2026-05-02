@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from database import get_db
@@ -5,6 +6,7 @@ from models.user import User
 from models.study_progress import StudyProgress
 from models.quiz_record import QuizRecord
 from models.achievement import Achievement
+from models.study_log import StudyLog
 from schemas.user import UserStats
 from services.gamification import GamificationService
 from services.content_loader import ContentLoader
@@ -83,3 +85,28 @@ def get_stats(user_id: int, db: Session = Depends(get_db)):
         nodes_completed=nodes_completed,
         achievements=achievement_list,
     )
+
+
+@router.get("/{user_id}/report")
+def get_weekly_report(user_id: int, db: Session = Depends(get_db)):
+    user = db.query(User).filter(User.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="用户不存在")
+    now = datetime.now()
+    week_ago = now - timedelta(days=7)
+    recent_logs = db.query(StudyLog).filter(StudyLog.user_id == user_id, StudyLog.created_at >= str(week_ago)).all()
+    weekly_quizzes = db.query(QuizRecord).filter(QuizRecord.user_id == user_id, QuizRecord.created_at >= str(week_ago)).count()
+    total_xp_week = 0
+    for log in recent_logs:
+        if log.action_type in ("complete_node", "quiz_submit"):
+            total_xp_week += 10 if log.action_type == "complete_node" else 20
+    study_days = db.query(StudyLog).filter(StudyLog.user_id == user_id, StudyLog.created_at >= str(week_ago)).distinct(StudyLog.created_at).count()
+    return {
+        "week_xp": total_xp_week,
+        "week_quizzes": weekly_quizzes,
+        "study_days": min(study_days, 7),
+        "total_nodes": nodes_completed,
+        "streak": user.streak_days,
+        "level": user.level,
+        "recommendation": "建议复习第3-4章的核心范式概念" if user.level < 3 else "保持节奏！继续深入学习下一章",
+    }
