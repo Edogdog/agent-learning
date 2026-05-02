@@ -1,0 +1,4 @@
+[
+  {"id": "q7-1-1", "quiz_id": "quiz-7-1", "stage_id": "7-1", "type": "multiple_choice", "question": "自研Agent框架不需要以下哪个组件？", "options": ["LLM接口层", "工具管理层", "操作系统内核", "编排引擎"], "correct_index": 2, "explanation": "Agent框架的核心组件包括LLM接口层、工具管理层、记忆系统和编排引擎，不需要自己实现操作系统内核。", "xp_reward": 20, "difficulty": "easy"},
+  {"id": "q7-1-2", "quiz_id": "quiz-7-1", "stage_id": "7-1", "type": "multiple_choice", "question": "Agent框架中记忆系统的主要功能不包括？", "options": ["对话历史管理", "长期记忆存储", "图片渲染", "上下文窗口管理"], "correct_index": 2, "explanation": "记忆系统负责对话历史、长期记忆和上下文窗口管理，图片渲染是UI层的功能。", "xp_reward": 20, "difficulty": "medium"}
+]

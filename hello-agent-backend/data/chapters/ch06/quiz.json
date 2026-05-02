@@ -1,0 +1,4 @@
+[
+  {"id": "q6-1-1", "quiz_id": "quiz-6-1", "stage_id": "6-1", "type": "multiple_choice", "question": "AutoGen是由哪家公司开发的多Agent框架？", "options": ["Google", "Meta", "Microsoft", "Amazon"], "correct_index": 2, "explanation": "AutoGen是微软(Microsoft)开发的开源多Agent对话框架。", "xp_reward": 20, "difficulty": "easy"},
+  {"id": "q6-1-2", "quiz_id": "quiz-6-1", "stage_id": "6-1", "type": "multiple_choice", "question": "LangGraph将Agent执行流程建模为什么？", "options": ["线性链表", "有向状态图", "二叉树", "哈希表"], "correct_index": 1, "explanation": "LangGraph使用有向图(Directed Graph)来建模Agent的执行流程，其中节点是处理步骤，边是条件和路由。", "xp_reward": 20, "difficulty": "easy"}
+]

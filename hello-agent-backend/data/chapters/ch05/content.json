@@ -1,0 +1,1 @@
+{"id": 5, "title": "低代码Agent平台", "description": "学习使用Coze、Dify等低代码平台快速构建Agent，无需深入编码即可创建实用的智能体应用。", "estimated_hours": 2.0, "emoji": "🛠️", "prerequisites": [1, 3], "story": "借用神兵利器：Coze与Dify", "prologue": "\"不是每个Agent都需要从零编写代码！\"AgentBot打开了一面巨大的屏幕，上面排列着各种低代码平台。\"Coze、Dify、n8n...这些都是打造Agent的'神兵利器'。有了它们，即使你不是编程高手，也能快速构建出强大的智能体。今天，我们就来掌握这些工具！\""}

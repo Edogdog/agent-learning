@@ -5,5 +5,6 @@
   "estimated_hours": 3.5,
   "emoji": "⚡",
   "prerequisites": [3],
-  "story": "修炼三大秘技：ReAct / Plan / Reflect"
+  "story": "修炼三大秘技：ReAct / Plan / Reflect",
+  "prologue": "AgentBot带你来到一处古老的武道场，墙上刻着三种古老的符号：🔄📋🪞\n\n\"这是Agent构建的三大秘技，\"它压低声音，\"ReAct让你边想边做，Plan让你谋定后动，Reflection让你反躬自省。\"\n\n\"每一位Agent架构师都必须精通这三种范式。今天，你就要开始修炼了。\""
 }

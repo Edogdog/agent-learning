@@ -1,0 +1,1 @@
+{"id": 6, "title": "Agent框架实践", "description": "深入学习AutoGen、LangGraph等主流Agent框架，掌握多Agent协作和复杂工作流编排。", "estimated_hours": 3.0, "emoji": "🔧", "prerequisites": [4], "story": "加入各大门派修炼", "prologue": "\"欢迎来到Agent框架的'武林大会'！\"AgentBot变出了一张地图，上面标注着各大'门派'——\"AutoGen派擅长多Agent对话，LangGraph派精于图状态管理，CrewAI派专注角色扮演...每个框架都有独门绝技，你需要了解它们各自的特点，才能选择最适合你的'功法'。\""}

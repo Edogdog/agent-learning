@@ -5,5 +5,6 @@
   "estimated_hours": 3.0,
   "emoji": "🧠",
   "prerequisites": [1],
-  "story": "解读大模型的心脏——Transformer"
+  "story": "解读大模型的心脏——Transformer",
+  "prologue": "\"准备好了吗？\" AgentBot带你走进一间巨大的数据中心，无数服务器闪烁着蓝光。\"这里就是现代LLM智能体的'大脑'——Transformer架构的运行之地。\"\n\n它变出一块全息白板：\"别怕公式，我用最简单的方式帮你理解注意力机制。想象你在一个嘈杂的餐厅里，如何从众多声音中'注意'到和你说话的人？这就是Attention！\"\n\n\"掌握了这一章，你就拿到了打开大模型世界的钥匙。\""
 }

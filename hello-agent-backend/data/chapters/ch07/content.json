@@ -1,0 +1,1 @@
+{"id": 7, "title": "自研Agent框架", "description": "理解HelloAgents框架的设计原理，学习如何从零构建一个轻量级Agent框架，掌握底层实现。", "estimated_hours": 3.5, "emoji": "🏗️", "prerequisites": [4, 6], "story": "创造属于你的独门功法", "prologue": "\"真正的Agent大师，不仅要会用工具，更要理解工具背后的原理。\"AgentBot拿出一个精致的工具箱——\"今天，我们要拆解一个Agent框架的'五脏六腑'，看看它真正的运行机制。当你理解了这些，你甚至可以创造属于自己的框架——你的'独门功法'。\""}
