@@ -25,8 +25,6 @@ function RootNavigator() {
     }
   }, [isOnboarding, isLoading, segments]);
 
-  if (isLoading) return null;
-
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack screenOptions={{ headerShown: false }}>
@@ -37,7 +35,7 @@ function RootNavigator() {
         <Stack.Screen name="wrong-answers" options={{ headerShown: true, title: '错题本', headerBackTitle: '返回' }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'AI 导师' }} />
       </Stack>
-      <TutorFAB />
+      {!isLoading && <TutorFAB />}
       <StatusBar style="auto" />
     </ThemeProvider>
   );
